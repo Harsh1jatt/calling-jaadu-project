@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calling Jaadu Project</title>
+    <link rel="shortcut icon" href="imgs/favicon-16x16.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .main{
+            border: 5px solid green;
+            background: black;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+        .h{
+            color: red;
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+
+        }
+        .h img{
+            border-right: 5px solid green;
+        }
+
+        .r{
+            color: red;
+            width: 100%;
+            height: 50%;
+            border-top: 5px solid green;
+            display: flex;
+            align-items: center;
+        }
+        .r img{
+            height: 100%;
+            width: 50%;
+            border-right: 5px solid green;
+        }
+        .r p{
+            height: 100%;
+            margin-left: 20%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="imgs/jadoo.png" alt=""> -->
+    <div class="main">
+        <div class="h">
+            <img src="imgs/line2.gif" alt="">
+            <img src="imgs/line.gif" alt="">
+        </div>
+        <div class="r">
+            <img src="imgs/rot.gif" alt="">
+            <p>Press B</p>
+        </div>
+    </div>
+
+    <script>
+        var p = document.querySelector(".r p");
+        var arr = ['Press B', 'Press C', 'Press F', 'Press E','Press D', 'Press C']
+        var audio = new Audio();
+        document.addEventListener("keydown", function (e) {
+            if (e.keyCode == 66) {
+                audio.src = 'audio/b.mp3';
+                p.textContent = arr[1];
+                audio.play();
+            }
+            else if (e.keyCode == 67) {
+                audio.src = 'audio/c.mp3';
+                p.textContent = arr[2];
+                audio.play()
+            }
+            else if (e.keyCode == 68) {
+                audio.src = 'audio/d.mp3';
+                p.textContent = arr[3];
+                audio.play()
+            }
+            else if (e.keyCode == 69) {
+                audio.src = 'audio/e.mp3';
+                p.textContent = arr[4];
+                audio.play()
+            }
+            else if (e.keyCode == 70) {
+                audio.src = 'audio/f.mp3';
+                p.textContent = arr[5];
+                audio.play()
+            }
+            else {
+                console.log(e.keyCode)
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
